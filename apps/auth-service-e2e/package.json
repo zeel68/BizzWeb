@@ -1,0 +1,26 @@
+{
+  "name": "@bizz-web/auth-service-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@bizz-web/auth-service"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/auth-service-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@bizz-web/auth-service:build",
+          "@bizz-web/auth-service:serve"
+        ]
+      }
+    }
+  }
+}
